@@ -26,8 +26,18 @@ const io = new Server(server, {
 io.on("connection", (socket) => {
 
     console.log("User connected");
-    console.log("Id", socket.id);
-    
+    // console.log("Id", socket.id);
+
+    // socket.broadcast.emit("welcome", "This is Broacasted msg")
+
+    socket.emit("welcome", "HZuheibwef")
+    socket.on("welcome", (msg) => {
+        console.log(msg);
+    })
+
+    socket.on("disconnect", () => {
+        
+    })
 
 })
 
