@@ -46,6 +46,11 @@ io.on("connection", (socket) => {
         io.to(data.room).emit("recevied-msg", data.message);
     })
 
+
+    socket.on("join-room", (room) => {
+        socket.join(room)
+    })
+
 })
 
 app.get('/', (req, res) => res.send('Hello World!'))
